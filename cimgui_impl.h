@@ -104,49 +104,49 @@ typedef struct ImGui_ImplVulkanH_Window ImGui_ImplVulkanH_Window;
 typedef struct ImGui_ImplVulkan_InitInfo ImGui_ImplVulkan_InitInfo;
 struct ImGui_ImplVulkan_InitInfo
 {
-    uint32_t ApiVersion;
-    VkInstance Instance;
-    VkPhysicalDevice PhysicalDevice;
-    VkDevice Device;
-    uint32_t QueueFamily;
-    VkQueue Queue;
-    VkDescriptorPool DescriptorPool;
-    VkRenderPass RenderPass;
-    uint32_t MinImageCount;
-    uint32_t ImageCount;
-    VkSampleCountFlagBits MSAASamples;
-    VkPipelineCache PipelineCache;
-    uint32_t Subpass;
-    uint32_t DescriptorPoolSize;
-    bool UseDynamicRendering;
+    uint32_t                        ApiVersion;
+    VkInstance                      Instance;
+    VkPhysicalDevice                PhysicalDevice;
+    VkDevice                        Device;
+    uint32_t                        QueueFamily;
+    VkQueue                         Queue;
+    VkDescriptorPool                DescriptorPool;
+    VkRenderPass                    RenderPass;
+    uint32_t                        MinImageCount;
+    uint32_t                        ImageCount;
+    VkSampleCountFlagBits           MSAASamples;
+    VkPipelineCache                 PipelineCache;
+    uint32_t                        Subpass;
+    uint32_t                        DescriptorPoolSize;
+    bool                            UseDynamicRendering;
     VkPipelineRenderingCreateInfoKHR PipelineRenderingCreateInfo;
-    const VkAllocationCallbacks* Allocator;
-    void (*CheckVkResultFn)(VkResult err);
-    VkDeviceSize MinAllocationSize;
+    const VkAllocationCallbacks*    Allocator;
+    void                            (*CheckVkResultFn)(VkResult err);
+    VkDeviceSize                    MinAllocationSize;
 };
 typedef struct ImGui_ImplVulkan_RenderState ImGui_ImplVulkan_RenderState;
 struct ImGui_ImplVulkan_RenderState
 {
-    VkCommandBuffer CommandBuffer;
-    VkPipeline Pipeline;
-    VkPipelineLayout PipelineLayout;
+    VkCommandBuffer     CommandBuffer;
+    VkPipeline          Pipeline;
+    VkPipelineLayout    PipelineLayout;
 };
 struct ImGui_ImplVulkanH_Frame;
 struct ImGui_ImplVulkanH_Window;
 struct ImGui_ImplVulkanH_Frame
 {
-    VkCommandPool CommandPool;
-    VkCommandBuffer CommandBuffer;
-    VkFence Fence;
-    VkImage Backbuffer;
-    VkImageView BackbufferView;
-    VkFramebuffer Framebuffer;
+    VkCommandPool       CommandPool;
+    VkCommandBuffer     CommandBuffer;
+    VkFence             Fence;
+    VkImage             Backbuffer;
+    VkImageView         BackbufferView;
+    VkFramebuffer       Framebuffer;
 };
 typedef struct ImGui_ImplVulkanH_FrameSemaphores ImGui_ImplVulkanH_FrameSemaphores;
 struct ImGui_ImplVulkanH_FrameSemaphores
 {
-    VkSemaphore ImageAcquiredSemaphore;
-    VkSemaphore RenderCompleteSemaphore;
+    VkSemaphore         ImageAcquiredSemaphore;
+    VkSemaphore         RenderCompleteSemaphore;
 };
 typedef struct ImVector_ImGui_ImplVulkanH_Frame {int Size;int Capacity;ImGui_ImplVulkanH_Frame* Data;} ImVector_ImGui_ImplVulkanH_Frame;
 
@@ -154,21 +154,21 @@ typedef struct ImVector_ImGui_ImplVulkanH_FrameSemaphores {int Size;int Capacity
 
 struct ImGui_ImplVulkanH_Window
 {
-    int Width;
-    int Height;
-    VkSwapchainKHR Swapchain;
-    VkSurfaceKHR Surface;
-    VkSurfaceFormatKHR SurfaceFormat;
-    VkPresentModeKHR PresentMode;
-    VkRenderPass RenderPass;
-    bool UseDynamicRendering;
-    bool ClearEnable;
-    VkClearValue ClearValue;
-    uint32_t FrameIndex;
-    uint32_t ImageCount;
-    uint32_t SemaphoreCount;
-    uint32_t SemaphoreIndex;
-    ImVector_ImGui_ImplVulkanH_Frame Frames;
+    int                 Width;
+    int                 Height;
+    VkSwapchainKHR      Swapchain;
+    VkSurfaceKHR        Surface;
+    VkSurfaceFormatKHR  SurfaceFormat;
+    VkPresentModeKHR    PresentMode;
+    VkRenderPass        RenderPass;
+    bool                UseDynamicRendering;
+    bool                ClearEnable;
+    VkClearValue        ClearValue;
+    uint32_t            FrameIndex;
+    uint32_t            ImageCount;
+    uint32_t            SemaphoreCount;
+    uint32_t            SemaphoreIndex;
+    ImVector_ImGui_ImplVulkanH_Frame           Frames;
     ImVector_ImGui_ImplVulkanH_FrameSemaphores FrameSemaphores;
 };
 #endif //CIMGUI_DEFINE_ENUMS_AND_STRUCTS
